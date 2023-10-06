@@ -4,10 +4,11 @@ import TestMSLider from "../components/landing/testimonials";
 import Episodes from "../components/landing/episodes";
 import Package from "../components/landing/package";
 import Footer from "../components/footer";
+import PageScribble from "../components/icons/pageScribble";
 const Home = () => {
     return ( <div className="w-full">
         <Hero />
-        <div className="p-28 space-y-20">
+        <div className="p-28 space-y-20 max-w-[1440px] mx-auto relative">
             <h1 className="text-[59px] font-bold text-center mx-auto max-w-[830px]"> Talk. Listen. Get inspired by every minute of it.</h1>
             <div className="flex w-full justify-between pb-8">
                 <div className="max-w-[472px] text-center flex flex-col items-center">
@@ -35,16 +36,22 @@ const Home = () => {
                 <img className="absolute -left-[60px] bottom-8" src={scribble} alt="" />
                 <img className="absolute -top-[55px] -right-[60px]" src={star4} alt="" />
             </div>
+            <div className="absolute text-black left-[calc((100%-46px)/2)] -bottom-[75px] z-20">
+                <PageScribble />
+            </div>
         </div>
-        <div className="p-28 space-y-20 bg-aliceblue">
+        <div className="p-28 space-y-20 bg-aliceblue relative">
             <div className="relative w-fit mx-auto">
                 <h1 className="text-[59px] font-bold text-center mx-auto max-w-[830px]">What our listeners say</h1>
                 <p className="font-medium text-grey mx-auto w-fit">Their experience throughout every platform</p>
                 <img className="absolute -top-14 -left-24" src={sparkle} alt="" />
             </div>
             <TestMSLider />
+            <div className="absolute text-black left-[calc((100%-46px)/2)] -bottom-[75px] z-20">
+                <PageScribble />
+            </div>
         </div>
-        <div className="p-28 space-y-20 flex flex-col">
+        <div className="p-28 space-y-20 flex flex-col max-w-[1440px] mx-auto relative">
             <div className="relative w-fit mx-auto">
                 <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px]">Membership benefits</h1>
                 <p className="font-medium text-grey mx-auto w-fit">Become our sponsor and get all benefits</p>
@@ -82,17 +89,23 @@ const Home = () => {
                     <p className="text-[16px] font-medium text-center">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
                 </div>
             </div>
-            <button className="mx-auto py-4 px-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] font-bold uppercase border-2 border-black text-white bg-black rounded-lg">SEE PRICING</button>
+            <button className="mx-auto py-4 px-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] font-bold uppercase border-2 border-black text-white bg-black hover:bg-transparent hover:text-black transition-all duration-300 rounded-lg">SEE PRICING</button>
+            <div className="absolute text-black left-[calc((100%-46px)/2)] -bottom-[75px] z-20">
+                <PageScribble />
+            </div>
         </div>
-        <div className="p-28 space-y-20 flex flex-col bg-primary">
+        <div className="p-28 space-y-20 flex flex-col bg-primary relative">
             <div className="relative w-fit mx-auto">
                 <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px]">Recent Episodes</h1>
                 <p className="font-medium text-grey mx-auto w-fit">Available on your favorite platform</p>
             </div>
             <Episodes />
-            <button className="mx-auto py-4 px-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] font-bold uppercase border-2 border-black text-white bg-black rounded-lg">BROWSE ALL EPISODES</button>
+            <button className="mx-auto py-4 px-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] font-bold uppercase border-2 border-black text-white bg-black hover:bg-transparent hover:text-black transition-all duration-300 rounded-lg">BROWSE ALL EPISODES</button>
+            <div className="absolute text-black left-[calc((100%-46px)/2)] -bottom-[75px] z-20">
+                <PageScribble />
+            </div>
         </div>
-        <div className="p-28 space-y-20 flex flex-col">
+        <div className="p-28 space-y-20 flex flex-col max-w-[1440px] mx-auto relative">
             <div className="relative w-fit mx-auto">
                 <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px]">Become our sponsor</h1>
                 <p className="font-medium text-grey mx-auto w-fit">Get exclusive episodes, merch and more</p>
@@ -104,13 +117,16 @@ const Home = () => {
                 <img className="absolute -top-16 -right-[72px] -z-10" src={star4} alt="" />
                 <img className="absolute -bottom-10 -left-[72px] -z-10" src={spiralBlue} alt="" />
             </div>
+            <div className="absolute text-black left-[calc((100%-46px)/2)] -bottom-[75px] z-20">
+                <PageScribble />
+            </div>
         </div>
-        <div className="p-28 space-y-20 flex flex-col">
+        <div className="p-28 space-y-20 flex flex-col max-w-[1440px] mx-auto relative">
             <div className="relative w-fit mx-auto">
                 <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px]">Article and News</h1>
                 <p className="font-medium text-grey mx-auto w-fit">News, tips, tricks and more</p>
             </div>
-            <div className="flex gap-6 w-full max-w-[1280px] mx-auto relative">
+            <div className="flex gap-6 w-full max-w-[1440px] mx-auto relative">
                 <div className="w-full p-3 rounded-xl border-2 border-black shadow-[10px_10px_0px_0px_#000]">
                     <img className="w-full object-cover rounded-lg h-[320px] mb-6" src={mic} alt="" />
                     <h4 className="uppercase text-grey mb-3 font-bold">Podcast</h4>
@@ -141,7 +157,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <button className="mx-auto py-4 px-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] font-bold uppercase border-2 border-black text-white bg-black rounded-lg">BROWSE ALL</button>
+            <button className="mx-auto py-4 px-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] font-bold uppercase border-2 border-black text-white bg-black hover:bg-transparent hover:text-black transition-all duration-300 rounded-lg">BROWSE ALL</button>
         </div>
     </div> );
 }

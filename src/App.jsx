@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Layout from './components/layout';
 import About from './pages/about';
+import EpisodePage from './pages/episodes';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Layout />} >
           <Route index element={<Home />} />
           <Route path='about' element={<About />} />
+          <Route path='episodes' element={<EpisodePage />} />
         </Route>
       </>
     )
