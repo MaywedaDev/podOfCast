@@ -25,7 +25,7 @@ const Episodes = () => {
                 </div>
                 <div className="w-full flex items-center justify-between">
                     <div className="space-x-2">
-                        {episode.tags.map(tag => <button className="border border-grey rounded p-2 text-grey">{tag}</button>)}
+                        {episode.tags.map((tag, i) => <button key={i} className="border border-grey rounded p-2 text-grey">{tag}</button>)}
                     </div>
                     <div className="flex items-center">
                         <span className="text-grey inline-block mr-3 text-[12px] font-bold">Hosted by: </span>

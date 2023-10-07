@@ -4,6 +4,8 @@ import stars from "./pictures/Group48095792.png"
 import cover1 from "./pictures/cover1.png"
 import cover2 from "./pictures/cover2.png"
 import cover3 from "./pictures/cover3.png"
+import cover4 from "./pictures/cover4.png"
+import cover5 from "./pictures/cover5.png"
 import youtube from "./vectors/youtube.svg"
 import gpods from "./vectors/GooglePodcast.svg"
 import spotify from "./vectors/Spotify.svg"
@@ -48,7 +50,7 @@ import instagram from "./vectors/instagram.svg"
 import twitter from "./vectors/twitter.svg"
 import tiktok from "./vectors/tiktok.svg"
 
-const covers = {cover1: cover1, cover2: cover2, cover3}
+const covers = {cover1: cover1, cover2: cover2, cover3, cover4, cover5}
 
 const apps = {
     youtube,

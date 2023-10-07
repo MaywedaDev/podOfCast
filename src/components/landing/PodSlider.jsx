@@ -8,18 +8,11 @@ const PodSlider = () => {
         <Swiper 
             spaceBetween={20}
             slidesPerView="auto"
+            loop={true}
         >
-        {Object.entries(covers).map((([key, value]) => <SwiperSlide>
-            <SingleSlide key={key} image={value} />
+        {Object.entries(covers).map((([key, value]) => <SwiperSlide key={key}>
+            <SingleSlide image={value} />
         </SwiperSlide>))}
-        <SwiperSlide>
-            <div className='w-[373px] h-[373px] rounded-xl bg-slate-700'>
-            </div>
-        </SwiperSlide>
-        <SwiperSlide>
-            <div className='w-[373px] h-[373px] rounded-xl bg-slate-700'>
-            </div>
-        </SwiperSlide>
     </Swiper>
     </div>  );
 }
@@ -27,7 +20,7 @@ const PodSlider = () => {
 const SingleSlide = ({image}) => {
     return (
         <div className='w-[373px] h-[373px] rounded-xl'>
-            <img className='w-full object-scale-down' src={image} alt="" />
+            <img width={373} height={373} className='w-full ' src={image} alt="" />
         </div>
     )
 }
