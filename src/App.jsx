@@ -9,6 +9,10 @@ import {
 import Layout from './components/layout';
 import About from './pages/about';
 import EpisodePage from './pages/episodes';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   const [count, setCount] = useState(0)

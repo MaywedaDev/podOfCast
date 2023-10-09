@@ -5,11 +5,41 @@ import Episodes from "../components/landing/episodes";
 import Package from "../components/landing/package";
 import Footer from "../components/footer";
 import PageScribble from "../components/icons/pageScribble";
+import gsap from "gsap";
+import { useLayoutEffect, useRef } from "react";
 const Home = () => {
-    return ( <div className="w-full">
+
+    const body = useRef(null)
+
+    useLayoutEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.fromTo(".headerText h1 span", {
+                rotation:15,
+                yPercent: 120,
+            }, {
+                rotation: 0,
+                yPercent: 0,
+                delay: .4,
+                duration: 1,
+                ease: "elastic.out(1, 0.75)",
+                scrollTrigger: {
+                    trigger:"#exm",
+                    start: "top center",
+                    end: "top 80%",
+                }
+            })
+        }, body)
+
+        return () => ctx.revert()
+    }, [])
+
+    return ( <div className="w-full" ref={body}>
         <Hero />
         <div className="p-28 space-y-20 max-w-[1440px] mx-auto relative">
-            <h1 className="text-[59px] font-bold text-center mx-auto max-w-[830px]"> Talk. Listen. Get inspired by every minute of it.</h1>
+            <div id="exm" className="headerText mx-auto max-w-[830px] w-full">
+                <h1 className="text-[59px] font-bold text-center overflow-hidden"><span className="inline-block">Talk. Listen. Get inspired</span></h1>
+                <h1 className="text-[59px] font-bold text-center overflow-hidden"><span className="inline-block">by every minute of it.</span></h1>
+            </div>
             <div className="flex w-full justify-between pb-8">
                 <div className="max-w-[472px] text-center flex flex-col items-center">
                     <img className="mb-12" src={thinkin} alt="" />
