@@ -10,7 +10,7 @@ const PodSlider = () => {
             slidesPerView="auto"
             loop={true}
         >
-        {[...Object.entries(covers), ...Object.entries(covers)].map((([key, value]) => <SwiperSlide key={key}>
+        {[...Object.entries(covers), ...Object.entries(covers)].map((([key, value], i) => <SwiperSlide key={i}>
             <SingleSlide image={value} />
         </SwiperSlide>))}
     </Swiper>

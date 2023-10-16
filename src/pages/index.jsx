@@ -7,27 +7,48 @@ import Footer from "../components/footer";
 import PageScribble from "../components/icons/pageScribble";
 import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Quote from "../components/landing/quote";
 const Home = () => {
 
     const body = useRef(null)
+    const illustrationsRef = useRef([]) 
 
+    illustrationsRef.current = []
+
+
+    const addToIllustrations = (el) => {
+        if(el && !illustrationsRef.current.includes(el)){
+            illustrationsRef.current.push(el)
+        }
+    }
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.fromTo(".headerText h1 span", {
-                rotation:15,
+
+            gsap.set(["h1 span", ...illustrationsRef.current],{
                 yPercent: 120,
-            }, {
-                rotation: 0,
-                yPercent: 0,
-                delay: .4,
-                duration: 1,
-                ease: "elastic.out(1, 0.75)",
-                scrollTrigger: {
-                    trigger:"#exm",
-                    start: "top center",
-                    end: "top 80%",
-                }
+                opacity: 0            })
+
+            ScrollTrigger.batch("h1 span", {
+                onEnter: (batch) => gsap.to(batch,{
+                    yPercent: 0,
+                    delay: .4,
+                    duration: 1,
+                    opacity: 1,
+                    ease: "elastic.out(1, 0.75)",
+                    stagger: 0.3
+                })
             })
+
+            ScrollTrigger.batch(illustrationsRef.current, {
+               onEnter: (batch) => gsap.to(batch,{
+                yPercent: 0,
+                opacity: 1,
+                stagger: 0.3,
+                duration: 0.4}),
+                start: "top-=400px center", 
+            })
+            
         }, body)
 
         return () => ctx.revert()
@@ -36,36 +57,21 @@ const Home = () => {
     return ( <div className="w-full" ref={body}>
         <Hero />
         <div className="p-28 space-y-20 max-w-[1440px] mx-auto relative">
-            <div id="exm" className="headerText mx-auto max-w-[830px] w-full">
+            <div className="headerText mx-auto max-w-[830px] w-full">
                 <h1 className="text-[59px] font-bold text-center overflow-hidden"><span className="inline-block">Talk. Listen. Get inspired</span></h1>
                 <h1 className="text-[59px] font-bold text-center overflow-hidden"><span className="inline-block">by every minute of it.</span></h1>
             </div>
             <div className="flex w-full justify-between pb-8">
-                <div className="max-w-[472px] text-center flex flex-col items-center">
+                <div className="max-w-[472px] text-center flex flex-col items-center" ref={addToIllustrations}>
                     <img className="mb-12" src={thinkin} alt="" />
                     <p className="text-[16px] font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio. </p>
                 </div>
-                <div className="max-w-[472px] text-center flex flex-col items-center">
+                <div className="max-w-[472px] text-center flex flex-col items-center" ref={addToIllustrations}>
                     <img className="mb-12" src={bulb} alt="" />
                     <p className="text-[16px] font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio. </p>
                 </div>
             </div>
-            <div className="w-full bg-primary rounded-xl p-8 flex flex-col relative">
-                <span className="inline-block mx-auto text-[95px] leading-[80px] text-text-primary font-bold">“</span>
-                <h2 className="text-center max-w-[768px] mx-auto text-[35px] font-bold">One of the best daily podcasts that covers every topic on Spotify.</h2>
-                <div className="flex gap-x-2 items-center justify-center mt-10">
-                    <div className="w-[48px] h-[48px] rounded-full overflow-hidden">
-                        <img src={avatars.john} alt="" />
-                    </div>
-                    <span className="inline-block font-medium">John Smith,</span>
-                    <div className="flex items-center gap-x-2">
-                        <img src={logos.spotifyLogo} alt="" />
-                        <span className="font-bold">Social Community Manager</span>
-                    </div>
-                </div>
-                <img className="absolute -left-[60px] bottom-8" src={scribble} alt="" />
-                <img className="absolute -top-[55px] -right-[60px]" src={star4} alt="" />
-            </div>
+            <Quote />
             <div className="absolute text-black left-[calc((100%-46px)/2)] -bottom-[75px] z-20">
                 <PageScribble />
             </div>
@@ -83,7 +89,7 @@ const Home = () => {
         </div>
         <div className="p-28 space-y-20 flex flex-col max-w-[1440px] mx-auto relative">
             <div className="relative w-fit mx-auto">
-                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px]">Membership benefits</h1>
+                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Membership benefits</span></h1>
                 <p className="font-medium text-grey mx-auto w-fit">Become our sponsor and get all benefits</p>
                 <img className="absolute -bottom-4 -right-[130px]" src={scribble2} alt="" />
             </div>
@@ -126,7 +132,7 @@ const Home = () => {
         </div>
         <div className="p-28 space-y-20 flex flex-col bg-primary relative">
             <div className="relative w-fit mx-auto">
-                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px]">Recent Episodes</h1>
+                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Recent Episodes</span></h1>
                 <p className="font-medium text-grey mx-auto w-fit">Available on your favorite platform</p>
             </div>
             <Episodes />
@@ -137,7 +143,7 @@ const Home = () => {
         </div>
         <div className="p-28 space-y-20 flex flex-col max-w-[1440px] mx-auto relative">
             <div className="relative w-fit mx-auto">
-                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px]">Become our sponsor</h1>
+                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Become our sponsor</span></h1>
                 <p className="font-medium text-grey mx-auto w-fit">Get exclusive episodes, merch and more</p>
             </div>
             <div className="grid grid-cols-3 gap-5 w-full max-w-[1280px] mx-auto relative">
@@ -153,7 +159,7 @@ const Home = () => {
         </div>
         <div className="p-28 space-y-20 flex flex-col max-w-[1440px] mx-auto relative">
             <div className="relative w-fit mx-auto">
-                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px]">Article and News</h1>
+                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Article and News</span></h1>
                 <p className="font-medium text-grey mx-auto w-fit">News, tips, tricks and more</p>
             </div>
             <div className="flex gap-6 w-full max-w-[1440px] mx-auto relative">
