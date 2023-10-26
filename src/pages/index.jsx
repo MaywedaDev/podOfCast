@@ -12,9 +12,10 @@ import Quote from "../components/landing/quote";
 const Home = () => {
 
     const body = useRef(null)
-    const illustrationsRef = useRef([]) 
+    const illustrationsRef = useRef([]), benefitsRef = useRef([]); 
 
     illustrationsRef.current = []
+    benefitsRef.current = []
 
 
     const addToIllustrations = (el) => {
@@ -22,10 +23,16 @@ const Home = () => {
             illustrationsRef.current.push(el)
         }
     }
+
+    const addToBenefits = (el) => {
+        if(el && !benefitsRef.current.includes(el)){
+            benefitsRef.current.push(el)
+        }
+    }
     useLayoutEffect(() => {
         const ctx = gsap.context(() => {
 
-            gsap.set(["h1 span", ...illustrationsRef.current],{
+            gsap.set(["h1 span", ...illustrationsRef.current, ...benefitsRef.current],{
                 yPercent: 120,
                 opacity: 0            })
 
@@ -48,6 +55,15 @@ const Home = () => {
                 duration: 0.4}),
                 start: "top-=400px center", 
             })
+
+            ScrollTrigger.batch(benefitsRef.current, {
+                onEnter: (batch) => gsap.to(batch,{
+                 yPercent: 0,
+                 opacity: 1,
+                 stagger: 0.3,
+                 duration: 0.4}),
+                 start: "top-=400px center", 
+             })
             
         }, body)
 
@@ -78,7 +94,7 @@ const Home = () => {
         </div>
         <div className="p-28 space-y-20 bg-aliceblue relative">
             <div className="relative w-fit mx-auto">
-                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[830px]">What our listeners say</h1>
+                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[830px] overflow-hidden"><span className="inline-block">What our listeners say</span></h1>
                 <p className="font-medium text-grey mx-auto w-fit">Their experience throughout every platform</p>
                 <img className="absolute -top-14 -left-24" src={sparkle} alt="" />
             </div>
@@ -93,33 +109,33 @@ const Home = () => {
                 <p className="font-medium text-grey mx-auto w-fit">Become our sponsor and get all benefits</p>
                 <img className="absolute -bottom-4 -right-[130px]" src={scribble2} alt="" />
             </div>
-            <div className="w-full flex gap-x-10 gap-y-16 flex-wrap">
-                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center">
+            <div className="w-full flex gap-x-10 gap-y-16 flex-wrap" >
+                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
                     <img src={benefits.scribble} alt="" />
                     <h4 className="mt-auto mb-3 text-center text-[20px] font-bold">Topic by Request</h4>
                     <p className="text-[16px] font-medium text-center">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
                 </div>
-                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center">
+                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
                     <img src={benefits.shiningStars} alt="" />
                     <h4 className="mt-auto mb-3 text-center text-[20px] font-bold">Exclusive Content</h4>
                     <p className="text-[16px] font-medium text-center">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
                 </div>
-                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center">
+                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
                     <img src={benefits.face} alt="" />
                     <h4 className="mt-auto mb-3 text-center text-[20px] font-bold">Join the Community</h4>
                     <p className="text-[16px] font-medium text-center">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
                 </div>
-                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center">
+                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
                     <img src={benefits.face5} alt="" />
                     <h4 className="mt-auto mb-3 text-center text-[20px] font-bold">Livestreaming Access</h4>
                     <p className="text-[16px] font-medium text-center">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
                 </div>
-                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center">
+                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
                     <img src={benefits.fire} alt="" />
                     <h4 className="mt-auto mb-3 text-center text-[20px] font-bold">Exclusive Episodes & Merch</h4>
                     <p className="text-[16px] font-medium text-center">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
                 </div>
-                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center">
+                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
                     <img src={benefits.star7} alt="" />
                     <h4 className="mt-auto mb-3 text-center text-[20px] font-bold">And much more!</h4>
                     <p className="text-[16px] font-medium text-center">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
