@@ -49,6 +49,21 @@ import keith from "./avatars/keith.png"
 import instagram from "./vectors/instagram.svg"
 import twitter from "./vectors/twitter.svg"
 import tiktok from "./vectors/tiktok.svg"
+import search from "./vectors/Search.svg"
+import artImg from "./pictures/artImg.png"
+import artImg1 from "./pictures/artImg1.png"
+import artImg2 from "./pictures/artImg2.png"
+import artImg3 from "./pictures/artImg3.png"
+import redTwitter from "./vectors/twitterRED.svg"
+import playstore from "./vectors/google_play.svg"
+import appstore from "./vectors/app_store.svg"
+import arrowleft from "./vectors/arrowleft.svg"
+import doodleImg from "./pictures/doodleImg.png"
+import dot from "./vectors/dot.svg"
+import doodleart1 from "./pictures/doodleart1.png"
+import doodleart2 from "./pictures/doodleart2.png"
+
+
 
 const covers = {cover1: cover1, cover2: cover2, cover3, cover4, cover5}
 
@@ -125,5 +140,18 @@ export {
     black,
     app1,
     app2,
-    studioMic
+    studioMic,
+    search,
+    artImg,
+    artImg1,
+    artImg2,
+    artImg3,
+    redTwitter,
+    playstore,
+    appstore,
+    arrowleft,
+    doodleImg,
+    dot,
+    doodleart1,
+    doodleart2
 }

@@ -1,4 +1,4 @@
-import { black, app1, app2, logo } from "../../assets/images";
+import { black, apps, app1, app2, logo, logos, redTwitter, appstore, playstore } from "../../assets/images";
 import PageScribble from "../icons/pageScribble";
 
 const Footer = () => {
@@ -24,30 +24,48 @@ const Footer = () => {
         <img width={437} height={416} className="absolute left-0 bottom-0" src={app1} alt="" />
         <img height={680} width={355} className="absolute bottom-0 right-0" src={app2} alt="" />
     </div>
-    <div className="pt-28 pb-16 px-28">
+    <div className="pt-28 pb-16 px-28 font-medium">
         <div className="flex justify-between mb-[140px]">
-            <div className="space-y-8">
+            <div className="space-y-8 max-w-[350px]">
                 <img src={logo} alt="" />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p className="text-[14px] font-medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div className="flex gap-x-4">
+                    <img src={redTwitter} alt="" />
+                    <img src={logos.tiktok} alt="" />
+                    <img src={logos.instagram} alt="" />
+                </div>
             </div>
             <ul className="space-y-8">
                 <li>About</li>
-                <li>Testimonials</li>
+                <li className="text-text-primary">Testimonials</li>
                 <li>Features</li>
             </ul>
             <ul className="space-y-8">
-                <li>Episodes</li>
+                <li className="text-text-primary">Episodes</li>
                 <li>Pricing</li>
                 <li>Blog</li>
             </ul>
-            <div className="space-y-8">
-                <p className="text-grey">Listen to episodes on your fav platforms</p>
-                <p className="text-grey">App availble on:</p>
+            <div className="space-y-12">
+                <div className="w-full">
+                    <p className="text-grey mb-3">Listen to episodes on your fav platforms</p>
+                    <div className="flex gap-x-8">
+                    {Object.entries(apps).map(([key, value]) => {
+                        return <div className="my-4 w-[90px]" key={key}><img className="mx-auto" src={value} alt="" /></div>
+                    })}
+                    </div>
+                </div>
+                <div className="w-full">
+                    <p className="text-grey">App availble on:</p>
+                    <div className="flex gap-x-6 mt-3">
+                        <img src={appstore} alt="" />
+                        <img src={playstore} alt="" />
+                    </div>
+                </div>
             </div>
         </div>
         <div className="w-full border-t border-grey pt-6 flex justify-between">
-                <p className="text-grey">©2022. All Rights Reserved. Pod of Cast</p>
-                <p>Terms | Privacy</p>
+                <p className="text-grey font-medium">©2022. All Rights Reserved. <span className="text-text-primary">Pod of Cast</span></p>
+                <p>Terms  •  Privacy</p>
         </div>
     </div>
     </> );

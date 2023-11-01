@@ -11,6 +11,8 @@ import About from './pages/about';
 import EpisodePage from './pages/episodes';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Articles from './pages/articles';
+import Post from './pages/singlePost';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -24,6 +26,10 @@ function App() {
           <Route index element={<Home />} />
           <Route path='about' element={<About />} />
           <Route path='episodes' element={<EpisodePage />} />
+          <Route path='articles'>
+              <Route index element={<Articles />} />
+              <Route path=':id' element={<Post />} />
+          </Route>
         </Route>
       </>
     )

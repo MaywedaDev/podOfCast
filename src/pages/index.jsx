@@ -3,7 +3,6 @@ import { thinkin, bulb, avatars, logos, scribble, star4, sparkle, scribble2, ben
 import TestMSLider from "../components/landing/testimonials";
 import Episodes from "../components/landing/episodes";
 import Package from "../components/landing/package";
-import Footer from "../components/footer";
 import PageScribble from "../components/icons/pageScribble";
 import gsap from "gsap";
 import { useLayoutEffect, useRef } from "react";
