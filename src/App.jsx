@@ -13,23 +13,23 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Articles from './pages/articles';
 import Post from './pages/singlePost';
-
+import routes from './routes';
 gsap.registerPlugin(ScrollTrigger)
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
         <Route path='/' element={<Layout />} >
-          <Route index element={<Home />} />
-          <Route path='about' element={<About />} />
-          <Route path='episodes' element={<EpisodePage />} />
-          <Route path='articles'>
-              <Route index element={<Articles />} />
-              <Route path=':id' element={<Post />} />
-          </Route>
+          {routes.map((route) => {
+            if (route.path === "/"){
+              return <Route key={route.name} index element={route.element} />
+            }
+            return <Route key={route.name} path={route.path} element={route.element} />
+          })
+          }
         </Route>
       </>
     )

@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { covers } from '../../assets/images';
+import {Autoplay} from "swiper/modules"
 
 import "swiper/css"
 
@@ -9,6 +10,11 @@ const PodSlider = () => {
             spaceBetween={20}
             slidesPerView="auto"
             loop={true}
+            autoplay={{ 
+                delay: 2500,
+                disableOnInteraction: false
+             }}
+            modules={[Autoplay]}
         >
         {[...Object.entries(covers), ...Object.entries(covers)].map((([key, value], i) => <SwiperSlide key={i}>
             <SingleSlide image={value} />

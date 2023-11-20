@@ -2,8 +2,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { avatars, logos } from "../../assets/images";
 import gsap from "gsap";
-import { useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect, useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import BtnCtrlArrow from "../icons/btnCtrlArrow";
+import { useState } from "react";
+import { useSwiper } from "swiper/react";
 
 const TestMSLider = () => {
 
@@ -46,6 +49,7 @@ const TestMSLider = () => {
         <Swiper
             spaceBetween={20}
             slidesPerView="auto"
+            onSlideChange={(e) => console.log(e.activeIndex)}
         >
             <SwiperSlide>
                 <div ref={addToSlider} className="w-[570px] rounded-xl bg-white p-6">
@@ -95,8 +99,29 @@ const TestMSLider = () => {
                     </div>
                 </div>
             </SwiperSlide>
+            <SlideControls />
         </Swiper>
+        
     </div> );
+}
+
+
+const SlideControls = () => {
+    const swiper = useSwiper()
+    const [currentIndex, setCurrentIndex] = useState(0)
+
+
+    useEffect(() => {
+        // console.log(currentIndex, swiper.activeIndex)
+    }, [currentIndex])
+    
+
+    return <>
+        <div className="w-fit space-x-3 flex my-5">
+            <button disabled={currentIndex <= 0} onClick={() => {setCurrentIndex(prev => prev - 1 ) ;swiper.slideTo(swiper.activeIndex - 1); }}  className={`rounded-full w-[42px] h-[42px] border-[1.5px] ${currentIndex <= 0 ? 'border-black text-black' : 'border-text-primary text-text-primary'} grid place-content-center rotate-180`}><BtnCtrlArrow /></button>
+            <button disabled={currentIndex >= 1} onClick={() => {setCurrentIndex(prev => prev + 1) ;swiper.slideTo(swiper.activeIndex + 1); }} className={`rounded-full w-[42px] h-[42px] border-[1.5px]  ${currentIndex >= 1 ? 'border-black text-black' : 'border-text-primary text-text-primary'} grid place-content-center`}><BtnCtrlArrow /></button>
+        </div>
+    </>
 }
  
 export default TestMSLider;

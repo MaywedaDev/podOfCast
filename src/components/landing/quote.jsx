@@ -23,12 +23,14 @@ const Quote = () => {
                     start: "top center"
                 }
             }).fromTo(quoteRef.current, {
-                width: "0%"
+                width: "0%",
+                opacity: 0
             }, {
                 width: "100%",
                 duration: 0.7,
                 ease: "power3.out",
                 delay: 0.4,
+                opacity: 1
             })
             .to([...quoteRef.current.children], {
                 opacity: 1,

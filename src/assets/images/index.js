@@ -62,6 +62,7 @@ import doodleImg from "./pictures/doodleImg.png"
 import dot from "./vectors/dot.svg"
 import doodleart1 from "./pictures/doodleart1.png"
 import doodleart2 from "./pictures/doodleart2.png"
+import sparkle2 from "./vectors/sparkle2.svg"
 
 
 
@@ -153,5 +154,6 @@ export {
     doodleImg,
     dot,
     doodleart1,
-    doodleart2
+    doodleart2,
+    sparkle2
 }
