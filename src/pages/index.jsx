@@ -37,10 +37,7 @@ const Home = () => {
 
             const packages = gsap.utils.toArray(".package")
 
-            console.log(packages)
-
             const animatePackage = (i) => {
-                console.log(i)
                 if (i <= 2){
                     gsap.timeline().to(packages[i],{
                     left: `${i * (100 / 3)}%`,

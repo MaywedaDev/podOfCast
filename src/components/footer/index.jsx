@@ -1,16 +1,54 @@
 import { black, apps, app1, app2, logo, logos, redTwitter, appstore, playstore } from "../../assets/images";
 import PageScribble from "../icons/pageScribble";
+import gsap from "gsap";
+import { useLayoutEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Footer = () => {
-    return ( <>
+    const footerRef = useRef(), headerRef = useRef(), tl = useRef(), betaRef = useRef()
+
+    useLayoutEffect(() => {
+        console.log(headerRef.current)
+        const ctx = gsap.context(() => {
+            
+            gsap.set([headerRef.current, ".slidin", ".fade-into"],
+            {
+                yPercent: 120,
+                opacity: 0
+            })
+
+            tl.current = gsap.timeline({
+                scrollTrigger:{
+                    trigger: footerRef.current
+            }}).from(betaRef.current, {
+                opacity: 0,
+                duration: .5
+            })
+
+            // ScrollTrigger.batch(["h1 span", ".slidin", ".fade-into"], {
+            //     onEnter: (batch) => gsap.to(batch,{
+            //         yPercent: 0,
+            //         delay: .4,
+            //         duration: 1,
+            //         opacity: 1,
+            //         ease: "elastic.out(1, 0.75)",
+            //         stagger: 0.3
+            //     })
+            // })
+        }, footerRef)
+
+        return ctx.revert()
+    }, [])
+
+    return ( <div className="w-full" ref={footerRef}>
     <div className="p-28 space-y-20 flex flex-col bg-aliceblue relative">
         <div className="absolute text-text-primary left-[calc((100%-46px)/2)] -top-[75px] z-20">
             <PageScribble />
         </div>
         <div className="relative w-fit mx-auto flex flex-col">
-            <button className="mx-auto rounded text-text-primary px-2 py-1 border border-text-primary uppercase font-bold">Beta</button>
-            <h1 className="text-[59px] font-bold text-center mx-auto max-w-[500px]">Available now Pod of Cast App</h1>
-            <p className="font-medium text-grey mx-auto w-fit">We just launched our podcast app!</p>
+            <button className="mx-auto rounded text-text-primary px-2 py-1 border border-text-primary uppercase font-bold" ref={betaRef}>Beta</button>
+            <h1 className="text-[59px] font-bold text-center mx-auto max-w-[500px]"><span className="inline-block" ref={headerRef}>Available now Pod of Cast App</span></h1>
+            <p className="font-medium text-grey mx-auto w-fit slidin">We just launched our podcast app!</p>
         </div>
         <div className="py-8 mx-auto fit-content flex flex-col">
             <button className="py-4 px-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] font-bold uppercase border-2 border-black text-white bg-black hover:bg-transparent hover:text-black transition-all duration-300 rounded-lg mb-6">Download Now</button>
@@ -68,7 +106,7 @@ const Footer = () => {
                 <p>Terms  •  Privacy</p>
         </div>
     </div>
-    </> );
+    </div> );
 }
  
 export default Footer;

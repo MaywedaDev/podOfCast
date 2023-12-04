@@ -84,14 +84,14 @@ const Hero = () => {
 
     return ( <div className="w-full bg-primary px-28 relative pb-28" ref={el}>
         <Nav ref={navbar} />
-        <div className="max-w-[550px] mx-auto flex flex-col">
-            <h2 className="origin-bottom headerText text-[96px] font-bold capitalize text-center leading-[110px] overflow-hidden"><span className="inline-block">Your Daily</span></h2>
-            <h2 className=" origin-bottom headerText text-[96px] font-bold capitalize text-center leading-[110px] text-text-primary overflow-hidden"><span className="inline-block">Podcast</span></h2>
+        <div className="max-w-[550px] mx-auto flex flex-col relative z-20">
+            <h2 className="origin-bottom headerText text-[72px] lg:text-[96px] font-bold capitalize text-center leading-[80px] lg:leading-[110px] overflow-hidden"><span className="inline-block">Your Daily</span></h2>
+            <h2 className=" origin-bottom headerText text-[72px] lg:text-[96px] font-bold capitalize text-center leading-[80px] lg:leading-[110px] text-text-primary overflow-hidden"><span className="inline-block">Podcast</span></h2>
             <p className="my-8 text-light-gray text-center leading-7 font-medium max-w-[310px] w-full mx-auto">We cover all kinds of categories and a weekly special guest.</p>
             <button id="main_btn" className="opacity-0 mx-auto py-4 px-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] font-bold uppercase border-2 border-black text-white bg-black rounded-lg hover:bg-transparent hover:text-black transition-all duration-300">Subscribe</button>
         </div>
-        <img ref={spiralRef} className="absolute left-0 top-20" src={spiral} />
-        <img ref={starRef} className="absolute right-14 top-[238px]" height={216} width={155}  src={stars} />
+        <img ref={spiralRef} className="absolute lg:left-0 -left-24 top-20" src={spiral} />
+        <img ref={starRef} className="absolute right-8 lg:right-14 top-[238px]" height={216} width={155}  src={stars} />
         <div style={{ marginLeft: -112, marginRight: -112 }} ref={pods}><PodSlider /></div>
         <div id="sponsors" ref={sponsors} className="border-y border-grey py-8 flex gap-x-4 items-center">
             <h3 className="text-[22px] font-bold mr-auto">Supported by:</h3>

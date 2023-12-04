@@ -73,8 +73,8 @@ const Layout = () => {
                 {(state) => (<>
                     <div ref={nodeRef}>
                         {currentRoute}
-                    </div>
-                    <Footer />
+                        <Footer />
+                    </div> 
                 </>)}
             </Transition>
         </SwitchTransition>
