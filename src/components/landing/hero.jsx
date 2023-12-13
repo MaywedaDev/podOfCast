@@ -82,7 +82,7 @@ const Hero = () => {
 
 
 
-    return ( <div className="w-full bg-primary px-28 relative pb-28" ref={el}>
+    return ( <div className="w-full bg-primary md:px-28 px-14 relative pb-28" ref={el}>
         <Nav ref={navbar} />
         <div className="max-w-[550px] mx-auto flex flex-col relative z-20">
             <h2 className="origin-bottom headerText text-[72px] lg:text-[96px] font-bold capitalize text-center leading-[80px] lg:leading-[110px] overflow-hidden"><span className="inline-block">Your Daily</span></h2>
@@ -93,11 +93,13 @@ const Hero = () => {
         <img ref={spiralRef} className="absolute lg:left-0 -left-24 top-20" src={spiral} />
         <img ref={starRef} className="absolute right-8 lg:right-14 top-[238px]" height={216} width={155}  src={stars} />
         <div style={{ marginLeft: -112, marginRight: -112 }} ref={pods}><PodSlider /></div>
-        <div id="sponsors" ref={sponsors} className="border-y border-grey py-8 flex gap-x-4 items-center">
+        <div id="sponsors" ref={sponsors} className="border-y border-grey py-8 flex md:flex-row flex-col gap-x-4 space-y-7 items-center">
             <h3 className="text-[22px] font-bold mr-auto">Supported by:</h3>
-            {Object.entries(apps).map(([key, value]) => {
-                return <div className="my-4 w-[23%]" key={key}><img className="mx-auto" src={value} alt="" /></div>
-            })}
+            <div className="grow flex gap-x-6">
+                {Object.entries(apps).map(([key, value]) => {
+                    return <div className="my-4 w-full" key={key}><img className="mx-auto" src={value} alt="" /></div>
+                })}
+            </div>
             {/* <div className="my-4 w-[23%]"></div>
             <div className="my-4 w-[23%]"></div> */}
         </div>

@@ -117,12 +117,12 @@ const Home = () => {
 
     return ( <div className="w-full" ref={body}>
         <Hero />
-        <div className="p-28 space-y-20 max-w-[1440px] mx-auto relative">
+        <div className="md:px-28 px-14 py-28 space-y-20 max-w-[1440px] mx-auto relative">
             <div className="headerText mx-auto max-w-[830px] w-full">
                 <h1 className="text-[59px] font-bold text-center overflow-hidden"><span className="inline-block">Talk. Listen. Get inspired</span></h1>
                 <h1 className="text-[59px] font-bold text-center overflow-hidden"><span className="inline-block">by every minute of it.</span></h1>
             </div>
-            <div className="flex w-full justify-between pb-8">
+            <div className="flex w-full justify-between gap-x-8 pb-8">
                 <div className="max-w-[472px] text-center flex flex-col items-center" ref={addToIllustrations}>
                     <img className="mb-12" src={thinkin} alt="" />
                     <p className="text-[16px] font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio. </p>
@@ -137,7 +137,7 @@ const Home = () => {
                 <PageScribble />
             </div>
         </div>
-        <div className="p-28 space-y-20 bg-aliceblue relative">
+        <div className="md:px-28 px-14 py-28 space-y-20 bg-aliceblue relative">
             <div className="relative w-fit mx-auto">
                 <h1 className="text-[59px] font-bold text-center mx-auto max-w-[830px] overflow-hidden"><span className="inline-block">What our listeners say</span></h1>
                 <p className="slidin font-medium text-grey mx-auto w-fit">Their experience throughout every platform</p>
@@ -148,39 +148,39 @@ const Home = () => {
                 <PageScribble />
             </div>
         </div>
-        <div className="p-28 space-y-20 flex flex-col max-w-[1440px] mx-auto relative">
+        <div className="md:px-28 px-14 py-28 space-y-20 flex flex-col max-w-[1440px] mx-auto relative">
             <div className="relative w-fit mx-auto">
                 <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Membership benefits</span></h1>
                 <p className="slidin font-medium text-grey mx-auto w-fit">Become our sponsor and get all benefits</p>
-                <img className="absolute -bottom-4 -right-[130px] fade-into" src={scribble2} alt="" />
+                <img className="absolute -top-[140px] -right-[130px] fade-into" src={scribble2} alt="" />
             </div>
             <div className="w-full flex gap-x-10 gap-y-16 flex-wrap" >
-                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
+                <div className="lg:w-[calc(33%-32px)] w-full md:w-[calc(50%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
                     <img src={benefits.scribble} alt="" />
                     <h4 className="mt-auto mb-3 text-center text-[20px] font-bold">Topic by Request</h4>
                     <p className="slidin text-[16px] font-medium text-center">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
                 </div>
-                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
+                <div className="lg:w-[calc(33%-32px)] w-full md:w-[calc(50%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
                     <img src={benefits.shiningStars} alt="" />
                     <h4 className="mt-auto mb-3 text-center text-[20px] font-bold">Exclusive Content</h4>
                     <p className="text-[16px] font-medium text-center">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
                 </div>
-                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
+                <div className="lg:w-[calc(33%-32px)] w-full md:w-[calc(50%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
                     <img src={benefits.face} alt="" />
                     <h4 className="mt-auto mb-3 text-center text-[20px] font-bold">Join the Community</h4>
                     <p className="text-[16px] font-medium text-center">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
                 </div>
-                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
+                <div className="lg:w-[calc(33%-32px)] w-full md:w-[calc(50%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
                     <img src={benefits.face5} alt="" />
                     <h4 className="mt-auto mb-3 text-center text-[20px] font-bold">Livestreaming Access</h4>
                     <p className="text-[16px] font-medium text-center">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
                 </div>
-                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
+                <div className="lg:w-[calc(33%-32px)] w-full md:w-[calc(50%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
                     <img src={benefits.fire} alt="" />
                     <h4 className="mt-auto mb-3 text-center text-[20px] font-bold">Exclusive Episodes & Merch</h4>
                     <p className="text-[16px] font-medium text-center">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
                 </div>
-                <div className="w-[calc(33%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
+                <div className="lg:w-[calc(33%-32px)] w-full md:w-[calc(50%-32px)] px-6 h-[180px] shrink-0 flex flex-col items-center" ref={addToBenefits}>
                     <img src={benefits.star7} alt="" />
                     <h4 className="mt-auto mb-3 text-center text-[20px] font-bold">And much more!</h4>
                     <p className="text-[16px] font-medium text-center">Lorem ipsum dolor sit amet consectet pis cing elit, sed do eiusmod tempor.</p>
@@ -211,7 +211,7 @@ const Home = () => {
                 <p className="slidin font-medium text-grey mx-auto w-fit">Get exclusive episodes, merch and more</p>
                 <img width={75} height={75} src={sparkle2} alt="" className="-left-[50px] -top-[30px] rotate-[270deg] absolute fade-into"  />
             </div>
-            <div id="packages" className="grid grid-cols-3 gap-5 w-full max-w-[1280px] mx-auto relative min-h-[689px]">
+            <div id="packages" className="flex gap-5 w-full max-w-[1280px] mx-auto relative min-h-[689px]">
                 <Package position={1} name="Member" price={9.99} perks={["Exclusive Content", "5% Discount on Merch", "Join the Community", "Livestreaming Access"]}/>
                 <Package name="Family" price={14.99} perks={["Everything in Tier 1", "Free tickets to Events", "Limited Edition Merch", "Promote your Product", "Request Topic"]} colored />
                 <Package name="Official" price={29.99} perks={["Everything in Tier 2", "Exclusive Badge on Livestreaming", "Become an Official Sponsor", "Early Access to All Episodes", "Free Stikers and Merch"]} />

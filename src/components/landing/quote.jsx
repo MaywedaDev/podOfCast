@@ -46,7 +46,7 @@ const Quote = () => {
         return () => ctx.revert()
     }, [])
 
-    return ( <div className="w-full bg-primary rounded-xl p-8 flex flex-col relative mx-auto max-h-[340px]" ref={quoteRef}>
+    return ( <div className="w-full bg-primary rounded-xl p-8 flex flex-col relative mx-auto min-h-[340px]" ref={quoteRef}>
         <span className="inline-block mx-auto text-[95px] leading-[80px] text-text-primary font-bold">“</span>
         <h2 className="text-center max-w-[768px] mx-auto text-[35px] font-bold">One of the best daily podcasts that covers every topic on Spotify.</h2>
         <div className="flex gap-x-2 items-center justify-center mt-10">

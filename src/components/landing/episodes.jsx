@@ -48,7 +48,7 @@ const Episodes = () => {
         
     ]
 
-    return ( <div className="w-full grid grid-cols-2 gap-5 max-w-[1440px] mx-auto" ref={episodeRef}>
+    return ( <div className="w-full grid min-[1024px]:grid-cols-2 gap-5 max-w-[1440px] mx-auto" ref={episodeRef}>
             {episodes.map((episode, i, arr) => (<div key={i} ref={addtoRef} className={`w-full p-4 bg-white rounded-xl border-2 border-black ${ i % 2 === 0 && "shadow-[10px_10px_0px_0px_#81ADC8]"}`}>
                 <div className="flex gap-4 mb-6 items-center">
                     <img className="w-[165px] h-[165px] shrink-0" src={episode.img} alt="" />
