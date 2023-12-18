@@ -5,7 +5,7 @@ import Episodes from "../components/landing/episodes";
 const EpisodePage = () => {
     return ( <>
         <AltHero>
-            <div className="flex gap-x-20 items-center mt-10 relative z-10 max-w-[1200px] mx-auto">
+            <div className="flex flex-col min-[1200px]:flex-row gap-20 items-center mt-10 relative z-10 max-w-[1200px] mx-auto">
                 <div className="w-[472px] shrink-0 shadow-[12px_12px_0px_0px_#81ADC8] rounded-xl">
                     <img className="w-full object-scale-down" src={covers.cover2} alt="" />
                 </div>
@@ -36,17 +36,19 @@ const EpisodePage = () => {
                 <button className="border border-grey rounded p-2 text-grey ml-2">health</button>
             </div>
         </AltHero>
-        <div className="p-28 flex flex-col relative">
+        <div className="py-28 lg:px-28 px-16 flex flex-col relative">
             <h2 className="text-[59px] mx-auto mb-14 w-fit font-bold">Latest Episodes</h2>
             <div className="max-w-[1440px]">
-                <div className="flex w-full justify-between py-4 px-2 border-b border-grey mb-28">
-                    <button className="text-grey font-medium text-[20px]">All</button>
-                    <button className="text-grey font-medium text-[20px]">Business</button>
-                    <button className="text-grey font-medium text-[20px]">Comedy</button>
-                    <button className="text-grey font-medium text-[20px]">Education</button>
-                    <button className="text-grey font-medium text-[20px]">Health</button>
-                    <button className="text-grey font-medium text-[20px]">News</button>
-                    <button className="text-grey font-medium text-[20px]">Tech</button>
+                <div className="w-full py-4 px-2 border-b border-grey mb-28 overflow-scroll">
+                    <div className="flex w-full justify-between min-w-[810px]">
+                        <button className="text-grey font-medium text-[20px]">All</button>
+                        <button className="text-grey font-medium text-[20px]">Business</button>
+                        <button className="text-grey font-medium text-[20px]">Comedy</button>
+                        <button className="text-grey font-medium text-[20px]">Education</button>
+                        <button className="text-grey font-medium text-[20px]">Health</button>
+                        <button className="text-grey font-medium text-[20px]">News</button>
+                        <button className="text-grey font-medium text-[20px]">Tech</button>
+                    </div>
                 </div>
                 <Episodes />
             </div>

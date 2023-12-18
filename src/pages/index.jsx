@@ -227,7 +227,7 @@ const Home = () => {
                 <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Article and News</span></h1>
                 <p className="slidin font-medium text-grey mx-auto w-fit">News, tips, tricks and more</p>
             </div>
-            <div className="flex gap-6 w-full max-w-[1440px] mx-auto relative">
+            <div className="flex flex-col lg:flex-row gap-6 w-full max-w-[1440px] mx-auto relative">
                 <img src={benefits.star7} width={180} height={180} alt="" className="absolute -top-[60px] -left-[100px] rotate-45 -z-10 fade-into" />
                 <img className="absolute -bottom-[160px] -right-[160px] rotate-[120deg] fade-into" src={scribble2} alt="" />
                 <div ref={addToIllustrations} className="w-full p-3 rounded-xl border-2 border-black shadow-[10px_10px_0px_0px_#000] bg-white">

@@ -50,8 +50,8 @@ const Episodes = () => {
 
     return ( <div className="w-full grid min-[1024px]:grid-cols-2 gap-5 max-w-[1440px] mx-auto" ref={episodeRef}>
             {episodes.map((episode, i, arr) => (<div key={i} ref={addtoRef} className={`w-full p-4 bg-white rounded-xl border-2 border-black ${ i % 2 === 0 && "shadow-[10px_10px_0px_0px_#81ADC8]"}`}>
-                <div className="flex gap-4 mb-6 items-center">
-                    <img className="w-[165px] h-[165px] shrink-0" src={episode.img} alt="" />
+                <div className="flex flex-col min-[650px]:flex-row gap-4 mb-6 items-center">
+                    <img className="min-[650px]:w-[165px] min-[650px]:h-[165px] w-full shrink-0" src={episode.img} alt="" />
                     <div className="w-full">
                         <h4 className="text-[16px] text-text-primary mb-2 font-bold">Eps. {arr.length - i}</h4>
                         <h3 className={`text-[20px] ${i % 2 === 0 && "text-text-primary" } mb-4 font-bold`}>{episode.title}</h3>
