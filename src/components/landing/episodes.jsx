@@ -59,7 +59,7 @@ const Episodes = () => {
                         <p className="text-grey font-medium">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio. </p>
                     </div>
                 </div>
-                <div className="w-full flex items-center justify-between">
+                <div className="w-full flex min-[500px]:items-center gap-4 justify-between flex-col-reverse min-[500px]:flex-row">
                     <div className="space-x-2">
                         {episode.tags.map((tag, i) => <button key={i} className="border border-grey rounded p-2 text-grey">{tag}</button>)}
                     </div>

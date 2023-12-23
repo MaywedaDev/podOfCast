@@ -49,7 +49,7 @@ const Quote = () => {
     return ( <div className="w-full bg-primary rounded-xl p-8 flex flex-col relative mx-auto min-h-[340px]" ref={quoteRef}>
         <span className="inline-block mx-auto text-[95px] leading-[80px] text-text-primary font-bold">“</span>
         <h2 className="text-center max-w-[768px] mx-auto text-[35px] font-bold">One of the best daily podcasts that covers every topic on Spotify.</h2>
-        <div className="flex gap-x-2 items-center justify-center mt-10">
+        <div className="flex flex-col min-[500px]:flex-row gap-x-2 items-center justify-center mt-10">
             <div className="w-[48px] h-[48px] rounded-full overflow-hidden">
                 <img src={avatars.john} alt="" />
             </div>
@@ -59,7 +59,7 @@ const Quote = () => {
                 <span className="font-bold">Social Community Manager</span>
             </div>
         </div>
-        <img className="absolute -left-[60px] bottom-8" src={scribble} alt="" />
+        <img className="absolute -left-[60px] bottom-8 hidden sm:block" src={scribble} alt="" />
         <img className="absolute -top-[55px] -right-[60px]" src={star4} alt="" />
     </div> );
 }

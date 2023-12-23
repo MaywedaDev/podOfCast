@@ -6,8 +6,8 @@ const About = () => {
         <AltHero >
             <div className="max-w-[768px] mx-auto flex flex-col mb-[140px]">
                 <h2 className="text-[64px] min-[900px]:text-[96px] font-bold capitalize text-center leading-[60px] min-[900px]:leading-[110px]">About <br/><span className="text-text-primary">Pod of cast</span></h2>
-                <p className="my-8 text-light-gray text-center leading-7 font-medium w-[540px] min-[900px]:w-full mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit,  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam–quis.</p>
-                <div className="flex gap-x-5 mx-auto">
+                <p className="my-8 text-light-gray text-center leading-7 font-medium max-w-[540px] min-[900px]:w-full mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit,  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam–quis.</p>
+                <div className="flex flex-col sm:flex-row gap-5 mx-auto">
                     <button className="py-4 px-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] font-bold uppercase border-2 border-black text-black rounded-lg">Become Sponsor</button>
                     <button className="py-4 px-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] font-bold uppercase border-2 border-black text-white bg-black rounded-lg">Subscribe</button>
                 </div>
@@ -45,11 +45,11 @@ const About = () => {
             </div>
         </div>
         <div className="mx-28 w-[calc(100%-224px)] h-px bg-grey"></div>
-        <div className="p-28 flex flex-col relative">
+        <div className="md:p-28 py-28 px-16 flex flex-col relative">
             <h2 className="text-[36px] mx-auto mb-14 w-fit font-bold">Founder and Main Host</h2>
             <div className="flex flex-col xl:flex-row gap-8 items-center">
-                <div className="h-[520px] border-2 flex gap-x-6 border-black rounded-xl bg-white p-3 shadow-[10px_10px_0px_0px_#000] w-full max-w-[680px]">
-                    <img className="h-full max-w-[260px] shrink-0 object-cover rounded-lg" src={avatars.porter} alt="" />
+                <div className="min-[768px]:h-[520px] border-2 flex flex-col min-[768px]:flex-row gap-6 border-black rounded-xl bg-white p-3 shadow-[10px_10px_0px_0px_#000] w-full max-w-[680px]">
+                    <img className="h-full min-[768px]:max-w-[260px] max-[768px]:w-full shrink-0 object-cover rounded-lg" src={avatars.porter} alt="" />
                     <div className="flex flex-col justify-end w-full">
                         <h4>Host 1</h4>
                         <h2 className="text-[36px] font-bold">Porter Severus</h2>
@@ -60,8 +60,8 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                <div className="h-[520px] border-2 flex gap-x-6 border-black rounded-xl bg-white p-3 shadow-[10px_10px_0px_0px_#000] w-full max-w-[680px]">
-                    <img className="h-full max-w-[260px] shrink-0 object-cover rounded-lg" src={avatars.keith} alt="" />
+                <div className="min-[768px]:h-[520px] border-2 flex flex-col min-[768px]:flex-row gap-6 border-black rounded-xl bg-white p-3 shadow-[10px_10px_0px_0px_#000] w-full max-w-[680px]">
+                    <img className="h-full min-[768px]:max-w-[260px] max-[768px]:w-full shrink-0 object-cover rounded-lg" src={avatars.keith} alt="" />
                     <div className="flex flex-col justify-end w-full">
                         <h4>Host 2</h4>
                         <h2 className="text-[36px] font-bold">Marques Keith</h2>
@@ -81,37 +81,35 @@ const About = () => {
             </div>
             <Sponsors />
         </div>    
-        <div className="p-28 space-y-10 flex flex-col max-w-[960px] mx-auto">
+        <div className="md:p-28 py-28 px-16 space-y-10 flex flex-col max-w-[960px] mx-auto">
             <div className="relative w-fit mx-auto">
                 <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px]">Get in touch</h1>
                 <p className="font-medium text-grey mx-auto w-fit">Send your message to us</p>
             </div>
             <div className="w-full h-px bg-grey"></div>
             <form className="space-y-10 flex flex-col" action="">
-                <div className="flex gap-x-5">
-                    <div className="space-y-2 w-full">
-                        <label htmlFor="" className="inline-block font-bold">Full name</label>
-                        <input type="text" className="rounded-lg border-[1.5px] border-black p-3 w-full" placeholder="e.g Porter Severus" />
+                    <div className="grid sm:grid-cols-2 gap-6">
+                        <div className="space-y-2 w-full">
+                            <label htmlFor="" className="inline-block font-bold">Full name</label>
+                            <input type="text" className="rounded-lg border-[1.5px] border-black p-3 w-full" placeholder="e.g Porter Severus" />
+                        </div>
+                        <div className="space-y-2 w-full">
+                            <label htmlFor="" className="inline-block font-bold">Email</label>
+                            <input type="text" className="rounded-lg border-[1.5px] border-black p-3 w-full" placeholder="johndoe@gmail.com" />
+                        </div>
+                        <div className="space-y-2 w-full">
+                            <label htmlFor="" className="inline-block font-bold">Phone</label>
+                            <input type="text" className="rounded-lg border-[1.5px] border-black p-3 w-full" placeholder="Phone" />
+                        </div>
+                        <div className="space-y-2 w-full">
+                            <label htmlFor="" className="inline-block font-bold">Subject</label>
+                            <input type="text" className="rounded-lg border-[1.5px] border-black p-3 w-full" placeholder="Subject..." />
+                        </div>
+                        <div className="space-y-2 w-full col-span-2">
+                            <label htmlFor="" className="inline-block font-bold">Message</label>
+                            <textarea type="text" className="rounded-lg border-[1.5px] border-black p-3 w-full" rows={6} placeholder="Your message goes here..."></textarea>
+                        </div>
                     </div>
-                    <div className="space-y-2 w-full">
-                        <label htmlFor="" className="inline-block font-bold">Email</label>
-                        <input type="text" className="rounded-lg border-[1.5px] border-black p-3 w-full" placeholder="johndoe@gmail.com" />
-                    </div>
-                </div>
-                <div className="flex gap-x-5">
-                    <div className="space-y-2 w-full">
-                        <label htmlFor="" className="inline-block font-bold">Phone</label>
-                        <input type="text" className="rounded-lg border-[1.5px] border-black p-3 w-full" placeholder="Phone" />
-                    </div>
-                    <div className="space-y-2 w-full">
-                        <label htmlFor="" className="inline-block font-bold">Subject</label>
-                        <input type="text" className="rounded-lg border-[1.5px] border-black p-3 w-full" placeholder="Subject..." />
-                    </div>
-                </div>
-                <div className="space-y-2 w-full">
-                    <label htmlFor="" className="inline-block font-bold">Message</label>
-                    <textarea type="text" className="rounded-lg border-[1.5px] border-black p-3 w-full" rows={6} placeholder="Your message goes here..."></textarea>
-                </div>
                 <button className="py-4 !mt-16 px-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] mx-auto font-bold uppercase border-2 border-black text-white bg-black rounded-lg">SEND MESSAGE</button>
             </form>
         </div>      

@@ -6,7 +6,7 @@ const EpisodePage = () => {
     return ( <>
         <AltHero>
             <div className="flex flex-col min-[1200px]:flex-row gap-20 items-center mt-10 relative z-10 max-w-[1200px] mx-auto">
-                <div className="w-[472px] shrink-0 shadow-[12px_12px_0px_0px_#81ADC8] rounded-xl">
+                <div className="sm:w-[472px] w-full shrink-0 shadow-[12px_12px_0px_0px_#81ADC8] rounded-xl">
                     <img className="w-full object-scale-down" src={covers.cover2} alt="" />
                 </div>
                 <div className="w-full">
@@ -24,7 +24,7 @@ const EpisodePage = () => {
                         </div>
                         <span className="text-grey font-medium">Sep 22, 2021</span>
                     </div>
-                    <div className="flex gap-x-5 mt-14">
+                    <div className="flex flex-col min-[500px]:flex-row gap-5 mt-14">
                         <button className="py-4 px-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] font-bold uppercase border-2 border-black text-white bg-black rounded-lg">Subscribe</button>
                         <button className="py-4 px-12 shadow-[4px_4px_0px_0px_rgba(0,0,0,0.25)] font-bold uppercase border-2 border-black text-black rounded-lg">LISTEN NOW <span className="text-text-primary">(46 min)</span></button>
                     </div>

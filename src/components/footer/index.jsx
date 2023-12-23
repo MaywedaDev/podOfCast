@@ -75,17 +75,19 @@ const Footer = () => {
                     <img src={logos.instagram} alt="" />
                 </div>
             </div>
-            <div className="flex gap-x-10">
-                <ul className="space-y-8">
-                    <li>About</li>
-                    <li className="text-text-primary">Testimonials</li>
-                    <li>Features</li>
-                </ul>
-                <ul className="space-y-8">
-                    <li className="text-text-primary">Episodes</li>
-                    <li>Pricing</li>
-                    <li>Blog</li>
-                </ul>
+            <div className="flex-col min-[700px]:flex-row flex gap-10">
+                <div className="gap-6 flex">
+                    <ul className="space-y-8">
+                        <li>About</li>
+                        <li className="text-text-primary">Testimonials</li>
+                        <li>Features</li>
+                    </ul>
+                    <ul className="space-y-8">
+                        <li className="text-text-primary">Episodes</li>
+                        <li>Pricing</li>
+                        <li>Blog</li>
+                    </ul>
+                </div>
                 <div className="space-y-12">
                     <div className="w-full">
                         <p className="text-grey mb-3">Listen to episodes on your fav platforms</p>
@@ -106,7 +108,7 @@ const Footer = () => {
             </div>
         </div>
         <div className="w-full border-t border-grey pt-6 flex justify-between">
-                <p className="text-grey font-medium">©2022. All Rights Reserved. <span className="text-text-primary">Pod of Cast</span></p>
+                <p className="text-grey font-medium">©2023. <span className="hidden sm:inline">All Rights Reserved.</span> <span className="text-text-primary">Pod of Cast</span></p>
                 <p>Terms  •  Privacy</p>
         </div>
     </div>

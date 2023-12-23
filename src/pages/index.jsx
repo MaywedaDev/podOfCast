@@ -97,8 +97,7 @@ const Home = () => {
                 yPercent: 0,
                 opacity: 1,
                 stagger: 0.3,
-                duration: 0.4}),
-                start: "top-=400px center", 
+                duration: 0.4})
             })
 
             ScrollTrigger.batch(benefitsRef.current, {
@@ -119,10 +118,10 @@ const Home = () => {
         <Hero />
         <div className="md:px-28 px-14 py-28 space-y-20 max-w-[1440px] mx-auto relative">
             <div className="headerText mx-auto max-w-[830px] w-full">
-                <h1 className="text-[59px] font-bold text-center overflow-hidden"><span className="inline-block">Talk. Listen. Get inspired</span></h1>
-                <h1 className="text-[59px] font-bold text-center overflow-hidden"><span className="inline-block">by every minute of it.</span></h1>
+                <h1 className="text-[36px] sm:text-[59px] font-bold text-center overflow-hidden"><span className="inline-block">Talk. Listen. Get inspired</span></h1>
+                <h1 className="text-[36px] sm:text-[59px] font-bold text-center overflow-hidden"><span className="inline-block">by every minute of it.</span></h1>
             </div>
-            <div className="flex w-full justify-between gap-x-8 pb-8">
+            <div className="flex flex-col sm:flex-row w-full justify-between gap-8 pb-8">
                 <div className="max-w-[472px] text-center flex flex-col items-center" ref={addToIllustrations}>
                     <img className="mb-12" src={thinkin} alt="" />
                     <p className="text-[16px] font-bold">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac ultrices odio. </p>
@@ -139,7 +138,7 @@ const Home = () => {
         </div>
         <div className="md:px-28 px-14 py-28 space-y-20 bg-aliceblue relative">
             <div className="relative w-fit mx-auto">
-                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[830px] overflow-hidden"><span className="inline-block">What our listeners say</span></h1>
+                <h1 className="text-[36px] sm:text-[59px] font-bold text-center mx-auto max-w-[830px] overflow-hidden"><span className="inline-block">What our listeners say</span></h1>
                 <p className="slidin font-medium text-grey mx-auto w-fit">Their experience throughout every platform</p>
                 <img className="absolute -top-14 -left-24 fade-into" src={sparkle} alt="" />
             </div>
@@ -150,7 +149,7 @@ const Home = () => {
         </div>
         <div className="md:px-28 px-14 py-28 space-y-20 flex flex-col max-w-[1440px] mx-auto relative">
             <div className="relative w-fit mx-auto">
-                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Membership benefits</span></h1>
+                <h1 className="text-[36px] sm:text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Membership benefits</span></h1>
                 <p className="slidin font-medium text-grey mx-auto w-fit">Become our sponsor and get all benefits</p>
                 <img className="absolute -top-[140px] -right-[130px] fade-into" src={scribble2} alt="" />
             </div>
@@ -191,9 +190,9 @@ const Home = () => {
                 <PageScribble />
             </div>
         </div>
-        <div className="p-28 space-y-20 flex flex-col bg-primary relative">
+        <div className="md:p-28 py-28 px-16 space-y-20 flex flex-col bg-primary relative">
             <div className="relative w-fit mx-auto">
-                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Recent Episodes</span></h1>
+                <h1 className="text-[36px] sm:text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Recent Episodes</span></h1>
                 <p className=" slidin font-medium text-grey mx-auto w-fit">Available on your favorite platform</p>
             </div>
             <div className="w-full relative">
@@ -207,7 +206,7 @@ const Home = () => {
         </div>
         <div className="p-28 space-y-20 flex flex-col max-w-[1440px] mx-auto relative">
             <div className="relative w-fit mx-auto">
-                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Become our sponsor</span></h1>
+                <h1 className="text-[36px] sm:text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Become our sponsor</span></h1>
                 <p className="slidin font-medium text-grey mx-auto w-fit">Get exclusive episodes, merch and more</p>
                 <img width={75} height={75} src={sparkle2} alt="" className="-left-[50px] -top-[30px] rotate-[270deg] absolute fade-into"  />
             </div>
@@ -222,9 +221,9 @@ const Home = () => {
                 <PageScribble />
             </div>
         </div>
-        <div className="p-28 space-y-20 flex flex-col max-w-[1440px] mx-auto relative">
+        <div className="md:p-28 py-28 px-16 space-y-20 flex flex-col max-w-[1440px] mx-auto relative">
             <div className="relative w-fit mx-auto">
-                <h1 className="text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Article and News</span></h1>
+                <h1 className="text-[36px] sm:text-[59px] font-bold text-center mx-auto max-w-[700px] overflow-hidden"><span className="inline-block">Article and News</span></h1>
                 <p className="slidin font-medium text-grey mx-auto w-fit">News, tips, tricks and more</p>
             </div>
             <div className="flex flex-col lg:flex-row gap-6 w-full max-w-[1440px] mx-auto relative">
