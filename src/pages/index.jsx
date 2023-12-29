@@ -37,19 +37,23 @@ const Home = () => {
 
             const packages = gsap.utils.toArray(".package")
 
+            packages.forEach((el, i) => {
+                el.style.transform = `translateX(calc(${i * -100}% - ${i * 20}px))`
+            } )
+
             const animatePackage = (i) => {
                 if (i <= 2){
                     gsap.timeline().to(packages[i],{
-                    left: `${i * (100 / 3)}%`,
-                    delay: .4,
-                    duration: .8,
-                    ease: "elastic.out(1, 0.75)",
-                }).to(packages[i].querySelector(".section-2"), {
-                    top: 377,
-                    duration: .8,
-                    ease: "elastic.out(1, 0.75)",
-                    onComplete: () => animatePackage(i+1)
-                })
+                        x: 0,
+                        delay: .4,
+                        duration: .8,
+                        ease: "elastic.out(1, 0.75)",
+                    }).to(packages[i].querySelector(".section-2"), {
+                        top: 377,
+                        duration: .8,
+                        ease: "elastic.out(1, 0.75)",
+                        onComplete: () => animatePackage(i+1)
+                    })
                 }
             }
 
@@ -97,7 +101,8 @@ const Home = () => {
                 yPercent: 0,
                 opacity: 1,
                 stagger: 0.3,
-                duration: 0.4})
+                duration: 0.4}),
+                start: "top bottom"
             })
 
             ScrollTrigger.batch(benefitsRef.current, {
@@ -210,7 +215,7 @@ const Home = () => {
                 <p className="slidin font-medium text-grey mx-auto w-fit">Get exclusive episodes, merch and more</p>
                 <img width={75} height={75} src={sparkle2} alt="" className="-left-[50px] -top-[30px] rotate-[270deg] absolute fade-into"  />
             </div>
-            <div id="packages" className="flex gap-5 w-full max-w-[1280px] mx-auto relative min-h-[689px]">
+            <div id="packages" className="grid grid-cols-2 min-[1200px]:grid-cols-3 gap-5 w-full max-w-[1280px] mx-auto relative min-h-[689px]">
                 <Package position={1} name="Member" price={9.99} perks={["Exclusive Content", "5% Discount on Merch", "Join the Community", "Livestreaming Access"]}/>
                 <Package name="Family" price={14.99} perks={["Everything in Tier 1", "Free tickets to Events", "Limited Edition Merch", "Promote your Product", "Request Topic"]} colored />
                 <Package name="Official" price={29.99} perks={["Everything in Tier 2", "Exclusive Badge on Livestreaming", "Become an Official Sponsor", "Early Access to All Episodes", "Free Stikers and Merch"]} />

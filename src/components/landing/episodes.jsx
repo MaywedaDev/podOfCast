@@ -31,7 +31,8 @@ const Episodes = () => {
                         opacity: 1,
                         ease: "elastic.out(1, 0.75)",
                         stagger: 0.3
-                    })
+                    }),
+                    start: "top bottom"
                 })
             }, episodeRef)
 
